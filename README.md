@@ -41,7 +41,7 @@ workon name_of_your_env
 
 #### Once virtual Environment is created.
 #### Go to specified directory to clone the project
-git clone 
+git clone https://github.com/Nishantkora/FullThrottle.git
 
 #### Install using pip
 pip install -r requirements.txt
