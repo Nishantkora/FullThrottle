@@ -2,6 +2,8 @@ __author__ = 'Nishanth'
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from .models import *
 from activity.models import ActivityPeriod
+from pytz import timezone
+
 date_formatter =  "%b %d %Y  %I:%M%p"
 
 class ActivityPeriodSerializers(ModelSerializer):
@@ -9,10 +11,14 @@ class ActivityPeriodSerializers(ModelSerializer):
     end_time = SerializerMethodField('endtime')
 
     def starttime(self, activityperiod):
-        return activityperiod.start_time.strftime(date_formatter)
+        timezone_str = activityperiod.user_id.timezone
+        start_time = activityperiod.start_time.astimezone(timezone(timezone_str))
+        return start_time.strftime(date_formatter)
 
     def endtime(self, activityperiod):
-        return activityperiod.end_time.strftime(date_formatter)
+        timezone_str = activityperiod.user_id.timezone
+        end_time = activityperiod.end_time.astimezone(timezone(timezone_str))
+        return end_time.strftime(date_formatter)
 
     class Meta:
         model = ActivityPeriod
