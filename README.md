@@ -2,6 +2,9 @@
 
 FullThrottle is a web application for time period activities of user across different months.
 
+## Tools and Technology
+Server : Ubuntu 18.04    Framework : Django    Language : Python     Database : SQLite      Cloud : AWS
+
 ## Setup
 
 ### Install virtual environment on ubuntu 18.04
