@@ -56,3 +56,13 @@ python manage.py runserver
 
 ### To access the users activity oeriod across months through api and go to browser and type
 http://localhost:8000/user/users
+
+## To access from aws
+
+### To list the users activity oeriod across months through api and go to browser and type
+http://3.20.161.26/user/users
+
+### To see existing already seeded users from admin panel
+http://3.20.161.26/admin
+email : nish@gmail.com
+password : ab12cd34
